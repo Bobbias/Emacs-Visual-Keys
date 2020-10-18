@@ -1,0 +1,28 @@
+﻿<UserControl x:Name="userControl" x:Class="EmacsVisualKeys.KeyboardKeyControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EmacsVisualKeys"
+             mc:Ignorable="d" 
+             d:DesignHeight="48.538" d:DesignWidth="42.667">
+
+    <Grid>
+        <Border CornerRadius="6.5" BorderThickness="1" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}">
+            <Grid>
+                <Grid.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=clipMask}" Stretch="None" />
+                </Grid.OpacityMask>
+                <!-- Fix MathConverter to handle a list, rather than a single value, CornerRadius has 4 comma separated values, not a single value "{Binding CornerRadius, ConverterParameter=@VALUE-(1/2), Converter={StaticResource MathConverter}, ElementName=outer2}"-->
+                <Border x:Name="clipMask" Background="White" CornerRadius="6"/>
+                <Button FontSize="18" BorderThickness="0" HorizontalContentAlignment="Center" UseLayoutRounding="False" Panel.ZIndex="1">
+                    <Viewbox StretchDirection="DownOnly" Stretch="Uniform">
+                        <ContentControl x:Name="ContentCtrl" Content="{Binding AdditionalContent, ElementName=userControl, FallbackValue=Fallback}"/>
+                    </Viewbox>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+
+
+</UserControl>

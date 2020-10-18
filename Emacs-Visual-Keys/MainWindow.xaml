@@ -1,0 +1,343 @@
+﻿<mah:MetroWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:converters="clr-namespace:EmacsVisualKeys"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        x:Name="window"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        x:Class="EmacsVisualKeys.MainWindow"
+        mc:Ignorable="d"
+        Title="EmacsKeyMapper" Height="480" Width="1000" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" ResizeMode="CanResizeWithGrip" MinWidth="500" MinHeight="480" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
+    <Window.Resources>
+
+        <!--<ControlTemplate x:Key="ButtonTemplate1" TargetType="{x:Type Button}">
+            <Grid/>
+        </ControlTemplate>-->
+        <converters:MathConverter x:Key="MathConverter"/>
+        <ControlTemplate x:Key="ButtonAdvTemplate1" TargetType="{x:Type Button}">
+            <Border CornerRadius="6.5" BorderBrush="Coral" BorderThickness="3.5">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" Value="AliceBlue"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    
+    <mah:MetroWindow.Flyouts>
+        <mah:FlyoutsControl>
+            <mah:Flyout x:Name="yourMahAppFlyout" Position="Right">
+                <TextBlock>Hello World!</TextBlock>
+            </mah:Flyout>
+        </mah:FlyoutsControl>
+    </mah:MetroWindow.Flyouts>
+
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <ToggleButton Content="Flyout" 
+        IsChecked="{Binding ElementName=yourMahAppFlyout, Path=IsOpen}" Cursor="Hand"/>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+    
+    <Border x:Name="border" BorderBrush="Black">
+        <Grid x:Name="OuterGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="317*"/>
+                <RowDefinition Height="106*"/>
+            </Grid.RowDefinitions>
+            <Rectangle x:Name="rect8044" Fill="#FFE6E6E6" StrokeThickness="1" Margin="0" Height="{Binding Height, ElementName=OuterGrid}" Grid.Row="1"/>
+            <Viewbox x:Name="viewbox" Grid.Row="1">
+                <Grid x:Name="grid1" Width="{Binding ActualWidth, ElementName=rect8044}" Height="296">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Margin="20,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <converters:KeyboardKeyControl Grid.Column="0" AdditionalContent="Esc"/>
+                        <converters:KeyboardKeyControl Grid.Column="2" AdditionalContent="F1"/>
+                        <converters:KeyboardKeyControl Grid.Column="3" AdditionalContent="F2"/>
+                        <converters:KeyboardKeyControl Grid.Column="4" AdditionalContent="F3"/>
+                        <converters:KeyboardKeyControl Grid.Column="5" AdditionalContent="F4"/>
+                        <converters:KeyboardKeyControl Grid.Column="7" AdditionalContent="F5"/>
+                        <converters:KeyboardKeyControl Grid.Column="8" AdditionalContent="F6"/>
+                        <converters:KeyboardKeyControl Grid.Column="9" AdditionalContent="F7"/>
+                        <converters:KeyboardKeyControl Grid.Column="10" AdditionalContent="F8"/>
+                        <converters:KeyboardKeyControl Grid.Column="12" AdditionalContent="F9"/>
+                        <converters:KeyboardKeyControl Grid.Column="13" AdditionalContent="F10"/>
+                        <converters:KeyboardKeyControl Grid.Column="14" AdditionalContent="F11"/>
+                        <converters:KeyboardKeyControl Grid.Column="15" AdditionalContent="F12"/>
+                        <converters:KeyboardKeyControl Grid.Column="17" AdditionalContent="PrtSc"/>
+                        <converters:KeyboardKeyControl Grid.Column="18" AdditionalContent="ScrLk"/>
+                        <converters:KeyboardKeyControl Grid.Column="19" AdditionalContent="Pause"/>
+                        <converters:KeyboardKeyControl Grid.Column="21" AdditionalContent="Media1"/>
+                        <converters:KeyboardKeyControl Grid.Column="22" AdditionalContent="Media2"/>
+                        <converters:KeyboardKeyControl Grid.Column="23" AdditionalContent="Media3"/>
+                        <converters:KeyboardKeyControl Grid.Column="24" AdditionalContent="Media4"/>
+                    </Grid>
+
+                    <Grid Grid.Row="2" Margin="20,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <converters:KeyboardKeyControl AdditionalContent="`~"/>
+                        <converters:KeyboardKeyControl Grid.Column="1" AdditionalContent="1"/>
+                        <converters:KeyboardKeyControl Grid.Column="2" AdditionalContent="2"/>
+                        <converters:KeyboardKeyControl Grid.Column="3" AdditionalContent="3"/>
+                        <converters:KeyboardKeyControl Grid.Column="4" AdditionalContent="4"/>
+                        <converters:KeyboardKeyControl Grid.Column="5" AdditionalContent="5"/>
+                        <converters:KeyboardKeyControl Grid.Column="6" AdditionalContent="6"/>
+                        <converters:KeyboardKeyControl Grid.Column="7" AdditionalContent="7"/>
+                        <converters:KeyboardKeyControl Grid.Column="8" AdditionalContent="8"/>
+                        <converters:KeyboardKeyControl Grid.Column="9" AdditionalContent="9"/>
+                        <converters:KeyboardKeyControl Grid.Column="10" AdditionalContent="0"/>
+                        <converters:KeyboardKeyControl Grid.Column="11" AdditionalContent="-"/>
+                        <converters:KeyboardKeyControl Grid.Column="12" AdditionalContent="="/>
+                        <converters:KeyboardKeyControl Grid.Column="13" AdditionalContent="&lt;-"/>
+                        <converters:KeyboardKeyControl Grid.Column="15" AdditionalContent="Ins"/>
+                        <converters:KeyboardKeyControl Grid.Column="16" AdditionalContent="Home"/>
+                        <converters:KeyboardKeyControl Grid.Column="17" AdditionalContent="PgUp"/>
+                        <converters:KeyboardKeyControl Grid.Column="19" AdditionalContent="NumLk"/>
+                        <converters:KeyboardKeyControl Grid.Column="20" AdditionalContent="/"/>
+                        <converters:KeyboardKeyControl Grid.Column="21" AdditionalContent="*"/>
+                        <converters:KeyboardKeyControl Grid.Column="22" AdditionalContent="-"/>
+                    </Grid>
+                    <Grid Grid.Row="3" Margin="20,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <converters:KeyboardKeyControl AdditionalContent="Tab"/>
+                        <converters:KeyboardKeyControl Grid.Column="1" AdditionalContent="Q"/>
+                        <converters:KeyboardKeyControl Grid.Column="2" AdditionalContent="W"/>
+                        <converters:KeyboardKeyControl Grid.Column="3" AdditionalContent="E"/>
+                        <converters:KeyboardKeyControl Grid.Column="4" AdditionalContent="R"/>
+                        <converters:KeyboardKeyControl Grid.Column="5" AdditionalContent="T"/>
+                        <converters:KeyboardKeyControl Grid.Column="6" AdditionalContent="Y"/>
+                        <converters:KeyboardKeyControl Grid.Column="7" AdditionalContent="U"/>
+                        <converters:KeyboardKeyControl Grid.Column="8" AdditionalContent="I"/>
+                        <converters:KeyboardKeyControl Grid.Column="9" AdditionalContent="O"/>
+                        <converters:KeyboardKeyControl Grid.Column="10" AdditionalContent="P"/>
+                        <converters:KeyboardKeyControl Grid.Column="11" AdditionalContent="["/>
+                        <converters:KeyboardKeyControl Grid.Column="12" AdditionalContent="]"/>
+                        <converters:KeyboardKeyControl Grid.Column="13" AdditionalContent="\"/>
+                        <converters:KeyboardKeyControl Grid.Column="15" AdditionalContent="Del"/>
+                        <converters:KeyboardKeyControl Grid.Column="16" AdditionalContent="End"/>
+                        <converters:KeyboardKeyControl Grid.Column="17" AdditionalContent="PgDn"/>
+                        <converters:KeyboardKeyControl Grid.Column="19" AdditionalContent="7"/>
+                        <converters:KeyboardKeyControl Grid.Column="20" AdditionalContent="8"/>
+                        <converters:KeyboardKeyControl Grid.Column="21" AdditionalContent="9"/>
+                        <converters:KeyboardKeyControl Grid.Column="22" Grid.RowSpan="2" Margin="0,0,0,-45.5384615384615" AdditionalContent="+"/>
+                    </Grid>
+                    <Grid Grid.Row="4" Margin="20,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.75*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2.25*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <converters:KeyboardKeyControl AdditionalContent="Caps"/>
+                        <converters:KeyboardKeyControl Grid.Column="1" AdditionalContent="A"/>
+                        <converters:KeyboardKeyControl Grid.Column="2" AdditionalContent="S"/>
+                        <converters:KeyboardKeyControl Grid.Column="3" AdditionalContent="D"/>
+                        <converters:KeyboardKeyControl Grid.Column="4" AdditionalContent="F"/>
+                        <converters:KeyboardKeyControl Grid.Column="5" AdditionalContent="G"/>
+                        <converters:KeyboardKeyControl Grid.Column="6" AdditionalContent="H"/>
+                        <converters:KeyboardKeyControl Grid.Column="7" AdditionalContent="J"/>
+                        <converters:KeyboardKeyControl Grid.Column="8" AdditionalContent="K"/>
+                        <converters:KeyboardKeyControl Grid.Column="9" AdditionalContent="L"/>
+                        <converters:KeyboardKeyControl Grid.Column="10" AdditionalContent=";"/>
+                        <converters:KeyboardKeyControl Grid.Column="11" AdditionalContent="'"/>
+                        <converters:KeyboardKeyControl Grid.Column="12" AdditionalContent="Ret"/>
+                        <converters:KeyboardKeyControl Grid.Column="18" AdditionalContent="4"/>
+                        <converters:KeyboardKeyControl Grid.Column="19" AdditionalContent="5"/>
+                        <converters:KeyboardKeyControl Grid.Column="20" AdditionalContent="6"/>
+                    </Grid>
+                    <Grid Grid.Row="5" Margin="20,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2.75*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <converters:KeyboardKeyControl AdditionalContent="Shift"/>
+                        <converters:KeyboardKeyControl Grid.Column="1" AdditionalContent="Z"/>
+                        <converters:KeyboardKeyControl Grid.Column="2" AdditionalContent="X"/>
+                        <converters:KeyboardKeyControl Grid.Column="3" AdditionalContent="C"/>
+                        <converters:KeyboardKeyControl Grid.Column="4" AdditionalContent="V"/>
+                        <converters:KeyboardKeyControl Grid.Column="5" AdditionalContent="B"/>
+                        <converters:KeyboardKeyControl Grid.Column="6" AdditionalContent="N"/>
+                        <converters:KeyboardKeyControl Grid.Column="7" AdditionalContent="M"/>
+                        <converters:KeyboardKeyControl Grid.Column="8" AdditionalContent=","/>
+                        <converters:KeyboardKeyControl Grid.Column="9" AdditionalContent="."/>
+                        <converters:KeyboardKeyControl Grid.Column="10" AdditionalContent="/"/>
+                        <converters:KeyboardKeyControl Grid.Column="11" AdditionalContent="Shift"/>
+                        <converters:KeyboardKeyControl Grid.Column="14" AdditionalContent="Up"/>
+                        <converters:KeyboardKeyControl Grid.Column="17" AdditionalContent="1"/>
+                        <converters:KeyboardKeyControl Grid.Column="18" AdditionalContent="2"/>
+                        <converters:KeyboardKeyControl Grid.Column="19" AdditionalContent="3"/>
+                        <converters:KeyboardKeyControl Grid.Column="20" AdditionalContent="Ret" Margin="0,0,0,-45.5384615384615"/>
+                    </Grid>
+                    <Grid Grid.Row="6" Margin="20,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="6.25*"/>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="1.25*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <converters:KeyboardKeyControl AdditionalContent="Ctrl"/>
+                        <converters:KeyboardKeyControl Grid.Column="1" AdditionalContent="Win"/>
+                        <converters:KeyboardKeyControl Grid.Column="2" AdditionalContent="Alt"/>
+                        <converters:KeyboardKeyControl Grid.Column="3" AdditionalContent="Space"/>
+                        <converters:KeyboardKeyControl Grid.Column="4" AdditionalContent="Alt"/>
+                        <converters:KeyboardKeyControl Grid.Column="5" AdditionalContent="Win"/>
+                        <converters:KeyboardKeyControl Grid.Column="6" AdditionalContent="Menu"/>
+                        <converters:KeyboardKeyControl Grid.Column="7" AdditionalContent="Ctrl"/>
+                        <converters:KeyboardKeyControl Grid.Column="9" AdditionalContent="Left"/>
+                        <converters:KeyboardKeyControl Grid.Column="10" AdditionalContent="Down"/>
+                        <converters:KeyboardKeyControl Grid.Column="11" AdditionalContent="Right"/>
+                        <converters:KeyboardKeyControl Grid.Column="13" AdditionalContent="0" Grid.ColumnSpan="2"/>
+                        <converters:KeyboardKeyControl Grid.Column="15" AdditionalContent="."/>
+                        
+                    </Grid>
+                </Grid>
+            </Viewbox>
+            <DockPanel LastChildFill="True" Grid.Row="0">
+                <Menu x:Name="menu" DockPanel.Dock="Top">
+                    <MenuItem Header="_File">
+                        <MenuItem Header="_Exit" Click="MenuItem_Click"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+        </Grid>
+    </Border>
+</mah:MetroWindow>
